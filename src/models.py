@@ -13,13 +13,9 @@ class Follower(Base):
     __tablename__ = 'follower'
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
-    
-
     user_from_id = Column(Integer, ForeignKey('user.id'),primary_key=True, nullable= False)
     user_to_id = Column(Integer, ForeignKey('user.id'), primary_key=True, nullable= False)
   
-    
-
 
 class User(Base):
     __tablename__ = 'user'
@@ -29,14 +25,6 @@ class User(Base):
     name = Column(String(250), nullable=False)
     passworld = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
-
-  
- 
-    
-   
-
-    
-    
    
 
 class Comentarios(Base):
@@ -56,6 +44,7 @@ class Post(Base):
     id = Column(Integer, primary_key=True,)
     user_id = Column(String(250),ForeignKey("user.id"), nullable=False)
 
+
 class Media(Base):
     __tablename__ = 'media'
     # Here we define columns for the table person
@@ -64,21 +53,6 @@ class Media(Base):
     type = Column(String(250), nullable=False)
     url = Column(String(250), nullable=False)
     post_id = Column(String(250), ForeignKey("post.id"))
-
-
-
-    
-
-#class Address(Base):
-  #  __tablename__ = 'address'
-    # Here we define columns for the table address.
-    # Notice that each column is also a normal Python instance attribute.
-  #  id = Column(Integer, primary_key=True)
-   # street_name = Column(String(250))
-  #  street_number = Column(String(250))
-  #  post_code = Column(String(250), nullable=False)
- #   user_id = Column(Integer, ForeignKey('user.id'))
-  #  user = relationship(User)
 
 
 
